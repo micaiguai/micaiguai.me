@@ -5,6 +5,7 @@ import './main.css'
 import 'virtual:uno.css'
 import '@unocss/reset/sanitize/sanitize.css'
 import '@unocss/reset/sanitize/assets.css'
+import '~build/console'
 
 export const createApp = ViteSSG(
   App,
