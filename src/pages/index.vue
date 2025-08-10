@@ -9,7 +9,7 @@
       Micaiguai
     </h1>
     Hi! I'm Micaiguai
-    , a fullstack developer.
+    , a Fullstack Developer.
   </div>
 </template>
 
