@@ -1,5 +1,9 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-dvh">
-    <RouterView />
+  <div class="text-gray-600 h-dvh dark:text-gray-300 dark:bg-black">
+    <Navbar />
+    <main class="mb-20">
+      <RouterView />
+    </main>
+    <Footer class="content m-auto" />
   </div>
 </template>

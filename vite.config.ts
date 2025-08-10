@@ -5,8 +5,15 @@ import Components from 'unplugin-vue-components/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
+import RemoteAssets from 'vite-plugin-remote-assets'
 
 export default defineConfig({
+  base: '/me/',
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
   plugins: [
     UnoCSS(),
     VueRouter(),
@@ -19,5 +26,6 @@ export default defineConfig({
       ],
     }),
     Components({}),
+    RemoteAssets(),
   ],
 })
