@@ -1,0 +1,37 @@
+{
+  "name": "boilerplate",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite-ssg build",
+    "preview": "vite preview",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "dependencies": {
+    "@unocss/reset": "^66.4.2",
+    "@vueuse/core": "^13.6.0",
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.2.0",
+    "@iconify-json/material-symbols": "^1.2.31",
+    "@unhead/vue": "^2.0.14",
+    "@unocss/eslint-plugin": "^66.4.2",
+    "@unocss/preset-icons": "^66.4.2",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.33.0",
+    "typescript": "~5.8.3",
+    "unocss": "^66.4.2",
+    "unplugin-auto-import": "^20.0.0",
+    "unplugin-vue-components": "^29.0.0",
+    "unplugin-vue-router": "^0.15.0",
+    "vite": "^7.1.1",
+    "vite-ssg": "^28.0.0",
+    "vue-router": "^4.5.1",
+    "vue-tsc": "^2.2.12"
+  }
+}
