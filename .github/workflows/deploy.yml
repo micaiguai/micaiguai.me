@@ -34,6 +34,6 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           external_repository: micaiguai/micaiguai.github.io
-          github_token: ${{ secrets.THE_GITHUB_TOKEN }}
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./dist
           destination_dir: ./me
