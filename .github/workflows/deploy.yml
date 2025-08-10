@@ -33,6 +33,7 @@ jobs:
         # below accordingly.
         if: github.ref == 'refs/heads/main'
         with:
+          external_repository: micaiguai/micaiguai.github.io
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           destination_dir: ./me
