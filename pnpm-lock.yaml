@@ -23,6 +23,12 @@ importers:
       i18next:
         specifier: ^25.4.0
         version: 25.4.0(typescript@5.9.2)
+      i18next-browser-languagedetector:
+        specifier: ^8.2.0
+        version: 8.2.0
+      i18next-vue:
+        specifier: ^5.3.0
+        version: 5.3.0(i18next@25.4.0(typescript@5.9.2))(vue@3.5.18(typescript@5.9.2))
       vue:
         specifier: ^3.5.18
         version: 3.5.18(typescript@5.9.2)
@@ -1531,6 +1537,15 @@ packages:
   https-proxy-agent@7.0.6:
     resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
+
+  i18next-browser-languagedetector@8.2.0:
+    resolution: {integrity: sha512-P+3zEKLnOF0qmiesW383vsLdtQVyKtCNA9cjSoKCppTKPQVfKd2W8hbVo5ZhNJKDqeM7BOcvNoKJOjpHh4Js9g==}
+
+  i18next-vue@5.3.0:
+    resolution: {integrity: sha512-X5gYF1R9FadUdRyIze6p+mU4+kztIRWb1SYeoegB0eFBt/lDA++i0A235enWq5qdrRpWZIHlLV8gd/D5xakOsw==}
+    peerDependencies:
+      i18next: '>=23'
+      vue: ^3.4.38
 
   i18next@25.4.0:
     resolution: {integrity: sha512-UH5aiamXsO3cfrZFurCHiB6YSs3C+s+XY9UaJllMMSbmaoXILxFgqDEZu4NbfzJFjmUo3BNMa++Rjkr3ofjfLw==}
@@ -4023,6 +4038,15 @@ snapshots:
       debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
+
+  i18next-browser-languagedetector@8.2.0:
+    dependencies:
+      '@babel/runtime': 7.28.3
+
+  i18next-vue@5.3.0(i18next@25.4.0(typescript@5.9.2))(vue@3.5.18(typescript@5.9.2)):
+    dependencies:
+      i18next: 25.4.0(typescript@5.9.2)
+      vue: 3.5.18(typescript@5.9.2)
 
   i18next@25.4.0(typescript@5.9.2):
     dependencies:
