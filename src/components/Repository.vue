@@ -7,6 +7,11 @@ const props = withDefaults(defineProps<{
   vscode?: boolean
   github?: boolean
   home?: boolean
+  npmUrl?: string
+  githubUrl?: string
+  iconUrl?: string
+  homeUrl?: string
+  vscodeUrl?: string
 }>(), {
   author: 'micaiguai',
   npm: false,
@@ -16,18 +21,28 @@ const props = withDefaults(defineProps<{
 })
 
 const npmUrl = computed(() => {
+  if (props.npmUrl)
+    return props.npmUrl
   return `https://www.npmjs.com/package/${props.name}`
 })
 const githubUrl = computed(() => {
+  if (props.githubUrl)
+    return props.githubUrl
   return `https://github.com/${props.author}/${props.name}`
 })
 const vscodeUrl = computed(() => {
+  if (props.vscodeUrl)
+    return props.vscodeUrl
   return `https://marketplace.visualstudio.com/items?itemName=${props.author}.${props.name}`
 })
 const iconUrl = computed(() => {
+  if (props.iconUrl)
+    return props.iconUrl
   return `https://raw.githubusercontent.com/${props.author}/${props.name}/refs/heads/main/assets/icon.png`
 })
 const homeUrl = computed(() => {
+  if (props.homeUrl)
+    return props.homeUrl
   return `https://micaiguai.github.io/${props.name}`
 })
 </script>
