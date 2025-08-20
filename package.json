@@ -13,6 +13,7 @@
   "dependencies": {
     "@unocss/reset": "^66.4.2",
     "@vueuse/core": "^13.7.0",
+    "change-case": "^5.4.4",
     "dayjs": "^1.11.13",
     "vue": "^3.5.18"
   },

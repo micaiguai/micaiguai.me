@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <a class="pb-0.5 border-b border-gray-300 hover:border-gray-900">
+  <a class="text-gray-400 pb-0.5 border-b border-gray-300 cursor-pointer hover:border-gray-900">
     <slot />
   </a>
 </template>
