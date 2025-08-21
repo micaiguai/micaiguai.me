@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { changeLanguage } from 'i18next'
-
-changeLanguage('zh-CN')
 </script>
 
 <template>
@@ -9,10 +6,10 @@ changeLanguage('zh-CN')
     <div class="mb-4">
       <Avatar class="m-auto" />
       <h1 class="text-3xl mb-2">
-        {{ $t($ => $.my.name) }}
+        {{ $t('my.name') }}
       </h1>
       <p class="">
-        {{ $t($ => $.my.introduce) }}
+        {{ $t('my.introduce') }}
       </p>
     </div>
     <div class="flex flex-wrap gap-2">

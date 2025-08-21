@@ -1,9 +1,7 @@
-import i18next from 'i18next'
-import I18NextVue from 'i18next-vue'
 import { ViteSSG } from 'vite-ssg'
 import { routes } from 'vue-router/auto-routes'
 import App from './App.vue'
-import './i18n/index'
+import { i18n } from './locales'
 import './main.css'
 import 'virtual:uno.css'
 import '@unocss/reset/sanitize/sanitize.css'
@@ -17,6 +15,6 @@ export const createApp = ViteSSG(
     base: import.meta.env.BASE_URL,
   },
   ({ app }) => {
-    app.use(I18NextVue, { i18next })
+    app.use(i18n)
   },
 )
