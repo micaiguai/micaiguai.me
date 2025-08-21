@@ -58,13 +58,13 @@ const homeUrl = computed(() => {
         <Link v-if="props.npm" :href="npmUrl" class="hover:text-[#ea2039] !hover:border-[#ea2039]">
           <div class="i-mdi:npm-variant" />
         </Link>
-        <Link v-if="props.github" :href="githubUrl" class="hover:text-black !hover:border-black">
+        <Link v-if="props.github" :href="githubUrl" class="hover:text-black hover:dark:text-white !hover:border-black !hover:dark:border-white">
           <div class="i-mdi:github" />
         </Link>
         <Link v-if="props.vscode" :href="vscodeUrl" class="hover:text-[#0078D4] !hover:border-[#0078D4]">
           <div class="i-mdi:microsoft-visual-studio-code" />
         </Link>
-        <Link v-if="props.home" :href="homeUrl" class="hover:text-black !hover:border-black">
+        <Link v-if="props.home" :href="homeUrl" class="hover:text-black hover:dark:text-white !hover:border-black !hover:dark:border-white">
           <div class="i-mdi:home" />
         </Link>
       </div>
