@@ -8,7 +8,7 @@ function toggleDark() {
 </script>
 
 <template>
-  <a class="cursor-pointer select-none" title="Toggle Color Scheme" @click="toggleDark">
+  <a class="trigger cursor-pointer select-none" title="Toggle Color Scheme" @click="toggleDark">
     <span class="i-ri:sun-line dark:i-ri:moon-line" />
   </a>
 </template>

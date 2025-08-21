@@ -1,5 +1,9 @@
 <template>
-  <div class="px-8 flex h-16 items-center justify-end">
+  <div class="px-8 flex gap-4 h-16 items-center justify-end">
+    <I18n />
     <ToggleTheme />
+    <a class="trigger" href="https://github.com/micaiguai/">
+      <div class="i-simple-icons:github cursor-pointer" />
+    </a>
   </div>
 </template>

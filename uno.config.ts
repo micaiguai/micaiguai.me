@@ -20,4 +20,8 @@ export default defineConfig({
   transformers: [
     transformerDirectives(),
   ],
+  shortcuts: {
+    content: 'max-w-160',
+    trigger: 'p-1 rounded cursor-pointer hover-bg-gray-100 dark:hover-bg-gray-600',
+  },
 })

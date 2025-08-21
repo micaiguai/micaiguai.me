@@ -15,6 +15,7 @@
     "@vueuse/core": "^13.7.0",
     "change-case": "^5.4.4",
     "dayjs": "^1.11.13",
+    "floating-vue": "^5.2.2",
     "vue": "^3.5.18",
     "vue-i18n": "^11.1.11"
   },
