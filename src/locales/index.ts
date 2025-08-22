@@ -4,6 +4,7 @@ import ja from './ja.json'
 import zhCN from './zh-CN.json'
 
 export const languages = ['en', 'zh-CN', 'ja'] as const
+export const languageLabels = ['English', '中文', '日本語']
 
 export type Language = typeof languages[number]
 

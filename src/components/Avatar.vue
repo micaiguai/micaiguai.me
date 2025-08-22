@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <img class="rounded-full size-32 select-none" src="https://cdn.jsdelivr.net/gh/micaiguai/assets/images/avatar.webp">
+  <img class="rounded-full size-32 select-none ring ring-gray-300" src="https://raw.githubusercontent.com/micaiguai/assets/refs/heads/main/images/avatar.webp">
 </template>

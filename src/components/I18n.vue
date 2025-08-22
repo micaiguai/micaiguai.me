@@ -1,44 +1,23 @@
 <script setup lang="ts">
-import type { Language } from '@/locales'
-import { hideAllPoppers, Dropdown as VDropdown } from 'floating-vue'
-import { i18n, languages } from '@/locales'
+import { i18n, languageLabels, languages } from '@/locales'
 
-function onClick(language: Language) {
+const languageIndex = ref(0)
+
+function onClick() {
+  languageIndex.value = (languageIndex.value + 1) % languages.length
+  const language = languages[languageIndex.value]!
   i18n.global.locale.value = language
-  hideAllPoppers()
 }
 </script>
 
 <template>
-  <VDropdown>
-    <div class="trigger">
-      <div class="i-mdi:earth cursor-pointer" />
+  <div
+    class="trigger flex gap-1 items-center"
+    @click="onClick"
+  >
+    <div class="i-mdi:earth cursor-pointer" />
+    <div class="text-gray-400">
+      {{ languageLabels[languageIndex] }}
     </div>
-    <template #popper>
-      <div
-        class="dark:bg-black"
-      >
-        <div
-          v-for="language in languages"
-          :key="language"
-          class="text-sm text-gray-600 px-1 py-.5 b-b-gray-300 cursor-pointer dark:text-gray-300 not-last-b-b-1 hover:bg-gray/30"
-          @click="onClick(language)"
-        >
-          {{ language }}
-        </div>
-      </div>
-    </template>
-  </VDropdown>
+  </div>
 </template>
-
-<style>
-html.dark .v-popper__inner {
-  --at-apply: bg-gray-300
-}
-html.dark .v-popper__arrow-inner {
-  --at-apply: b-black
-}
-html.dark .v-popper__arrow-outer {
-  --at-apply: b-gray-300
-}
-</style>
