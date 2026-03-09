@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <img
     class="image-render-pixel rounded-full size-32 select-none ring ring-gray-300"

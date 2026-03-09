@@ -8,26 +8,30 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 import RemoteAssets from 'vite-plugin-remote-assets'
 
-export default defineConfig({
-  base: '/me/',
-  resolve: {
-    alias: {
-      '@': '/src',
+export default defineConfig((env) => {
+  const { command, isPreview } = env
+
+  return {
+    base: (command === 'build' || isPreview) ? '/me' : '/',
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
     },
-  },
-  plugins: [
-    UnoCSS(),
-    VueRouter(),
-    vue(),
-    AutoImport({
-      imports: [
-        'vue',
-        VueRouterAutoImports,
-        '@vueuse/core',
-      ],
-    }),
-    Components({}),
-    RemoteAssets(),
-    Info(),
-  ],
+    plugins: [
+      UnoCSS(),
+      VueRouter(),
+      vue(),
+      AutoImport({
+        imports: [
+          'vue',
+          VueRouterAutoImports,
+          '@vueuse/core',
+        ],
+      }),
+      Components({}),
+      RemoteAssets(),
+      Info(),
+    ],
+  }
 })

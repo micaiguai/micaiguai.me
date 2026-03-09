@@ -1,71 +1,49 @@
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
+import { getIconUrl, getNpmUrl, getRepoUrl, getVscodeUrl, getWebUrl } from '@/utils/url'
+
+export interface Props {
   name: string
   title: string
-  author?: string
-  npm?: boolean
-  vscode?: boolean
-  github?: boolean
-  home?: boolean
+  username?: string
+  showNpm?: boolean
+  showVscode?: boolean
+  showRepo?: boolean
+  showWeb?: boolean
   npmUrl?: string
-  githubUrl?: string
-  iconUrl?: string
-  homeUrl?: string
+  repoUrl?: string
   vscodeUrl?: string
-}>(), {
-  author: 'micaiguai',
-  npm: false,
-  vscode: false,
-  github: false,
-  home: false,
+  iconUrl?: string
+  webUrl?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  username: 'micaiguai',
 })
 
-const npmUrl = computed(() => {
-  if (props.npmUrl)
-    return props.npmUrl
-  return `https://www.npmjs.com/package/${props.name}`
-})
-const githubUrl = computed(() => {
-  if (props.githubUrl)
-    return props.githubUrl
-  return `https://github.com/${props.author}/${props.name}`
-})
-const vscodeUrl = computed(() => {
-  if (props.vscodeUrl)
-    return props.vscodeUrl
-  return `https://marketplace.visualstudio.com/items?itemName=${props.author}.${props.name}`
-})
-const iconUrl = computed(() => {
-  if (props.iconUrl)
-    return props.iconUrl
-  return `https://raw.githubusercontent.com/${props.author}/${props.name}/refs/heads/main/assets/icon.png`
-})
-const homeUrl = computed(() => {
-  if (props.homeUrl)
-    return props.homeUrl
-  return `https://micaiguai.github.io/${props.name}`
-})
+const npmUrl = computed(() => props.npmUrl || getNpmUrl(props.username))
+const repoUrl = computed(() => props.repoUrl || getRepoUrl(props.username, props.name))
+const vscodeUrl = computed(() => props.vscodeUrl || getVscodeUrl(props.username, props.name))
+const iconUrl = computed(() => props.iconUrl || getIconUrl(props.username, props.name))
+const webUrl = computed(() => props.webUrl || getWebUrl(props.username, props.name))
 </script>
 
 <template>
   <div class="p-2 rounded flex gap-2 ring ring-gray-300 items-stretch">
-    <img class="size-12" :src="iconUrl" alt="">
+    <img class="size-12" :src="iconUrl">
     <div class="flex flex-col justify-between">
-      <div class="">
-        {{ title }}
-      </div>
+      <div>{{ title }}</div>
       <div class="flex gap-2">
-        <Link v-if="props.npm" :href="npmUrl" class="hover:text-[#ea2039] !hover:border-[#ea2039]">
-          <div class="i-mdi:npm-variant" />
+        <Link v-if="props.showWeb" :href="webUrl" class="hover:text-black hover:dark:text-white !hover:border-black !hover:dark:border-white">
+          <div class="i-mdi:earth" />
         </Link>
-        <Link v-if="props.github" :href="githubUrl" class="hover:text-black hover:dark:text-white !hover:border-black !hover:dark:border-white">
+        <Link v-if="props.showRepo" :href="repoUrl" class="hover:text-black hover:dark:text-white !hover:border-black !hover:dark:border-white">
           <div class="i-mdi:github" />
         </Link>
-        <Link v-if="props.vscode" :href="vscodeUrl" class="hover:text-[#0078D4] !hover:border-[#0078D4]">
-          <div class="i-mdi:microsoft-visual-studio-code" />
+        <Link v-if="props.showNpm" :href="npmUrl" class="hover:text-[#ea2039] !hover:border-[#ea2039]">
+          <div class="i-mdi:npm-variant" />
         </Link>
-        <Link v-if="props.home" :href="homeUrl" class="hover:text-black hover:dark:text-white !hover:border-black !hover:dark:border-white">
-          <div class="i-mdi:home" />
+        <Link v-if="props.showVscode" :href="vscodeUrl" class="hover:text-[#0078D4] !hover:border-[#0078D4]">
+          <div class="i-mdi:microsoft-visual-studio-code" />
         </Link>
       </div>
     </div>

@@ -2,6 +2,7 @@
 import { useDark } from '@vueuse/core'
 
 const isDark = useDark()
+
 function toggleDark() {
   isDark.value = !isDark.value
 }
